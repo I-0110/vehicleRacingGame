@@ -265,7 +265,7 @@ class Cli {
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
           parseInt(answers.year),
-          parseInt(answers.frontWheelDiameter, answers.rearWheelDiameter),
+          answers.wheel, 
         );
         // X TODO: push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
@@ -301,7 +301,7 @@ class Cli {
           console.log(`A truck cannot tow itself. Please select another vehicle.`)
         } else { // X TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
           console.log(`Towing vehicle:${selectedVehicle.vin}`)
-          this.performActions(truck);
+          this.performActions();
         }
       });
   }
@@ -392,19 +392,19 @@ class Cli {
         } else if (answers.action === 'Tow') { 
           // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
           if (this.vehicles instanceof Truck) {
-            await this.findVehicleToTow(this.vehicles)
+            this.findVehicleToTow(this.vehicles)
           } else {
             console.log(`Only trucks can tow.`)
           }
-          break;
+          return;
           // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         } else if (answers.action === 'Wheelie') {
           if (this.vehicles instanceof Motorbike) {
-            this.vehicles.wheelie();
+            // this.vehicles();
           } else {
             console.log("Only motorbikes can perform a wheelie.");
           }
-          break;
+          return;
         } else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
@@ -415,7 +415,7 @@ class Cli {
         }
         if (!this.exit) {
           // if the user does not want to exit, perform actions on the selected vehicle
-          this.performTruckActions(truck: Truck);
+          this.performActions();
         }
       });
   }
