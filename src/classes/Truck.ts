@@ -54,11 +54,10 @@ class Truck extends Vehicle {
     const model = vehicle.make && vehicle.model ? `${vehicle.make} ${vehicle.model}`: "vehicle";
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     if (vehicle.weight <= this.towingCapacity) {
-    
-    // TODO: If it is, log that the vehicle is being towed
+    // X TODO: If it is, log that the vehicle is being towed
    console.log(`Vehicle has being towed.`);
     
-    } else { // TODO: If it is not, log that the vehicle is too heavy to be towed
+    } else { // X TODO: If it is not, log that the vehicle is too heavy to be towed
       console.log(`Vehicle is too heavy to be towed.`);
     }
      

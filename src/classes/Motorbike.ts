@@ -37,20 +37,25 @@ class Motorbike extends Vehicle {
     this.year = year; 
     this.weight = weight;
     this.topSpeed = topSpeed; 
-    // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
+    // X TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()]
     } else {
       this.wheels = wheels;
     }
   }
-  // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
-
-  // TODO: Override the printDetails method from the Vehicle class
+  // X TODO: Implement the wheelie method
+  wheelie(): void {
+  // X TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+    console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`)  
+  }
+  // X TODO: Override the printDetails method from the Vehicle class
   override printDetails(): void {
+    // X TODO: The method should call the printDetails method of the parent class
     super.printDetails();
 
+  //X TODO: The method should log the details of the Motorbike
+  //X TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
     console.log(`VIN: ${this.vin}`);
     console.log(`Color: ${this.color}`);
     console.log(`Make: ${this.make}`);
@@ -59,13 +64,9 @@ class Motorbike extends Vehicle {
     console.log(`Weight: ${this.weight}lbs`);
     console.log(`Top Speed: ${this.topSpeed}mph`);
 
-    console.log(`Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`);
-
-    console.log(`Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`);
+    for (let i=0; i < this.wheels.length; i++)
+      console.log(`Wheel ${i + 1}: ${this.wheels[i].getDiameter} inch with a ${this.wheels[i].getTireBrand} tire`);
   }
-  // TODO: The method should call the printDetails method of the parent class
-  // TODO: The method should log the details of the Motorbike
-  // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
 }
 // Export the Motorbike class as the default export
 export default Motorbike;
