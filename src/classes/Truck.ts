@@ -48,21 +48,20 @@ class Truck extends Vehicle {
       this.wheels = wheels;
     }
   }
-  // TODO: Implement the tow method from the AbleToTow interface
-  tow(vehicle: Truck | Motorbike | Car): void {
-    // TODO: Get the make an model of the vehicle if it exists
-    const model = vehicle.make && vehicle.model ? `${vehicle.make} ${vehicle.model}`: "vehicle";
-    // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
-    if (vehicle.weight <= this.towingCapacity) {
-    // X TODO: If it is, log that the vehicle is being towed
-   console.log(`Vehicle has being towed.`);
-    
-    } else { // X TODO: If it is not, log that the vehicle is too heavy to be towed
-      console.log(`Vehicle is too heavy to be towed.`);
+  // X TODO: Implement the tow method from the AbleToTow interface
+  // implement AbleToTow {
+    tow(vehicle: Truck | Motorbike | Car): void {
+      // X TODO: Get the make an model of the vehicle if it exists
+      const model = vehicle.make && vehicle.model ? `${vehicle.make} ${vehicle.model}`: "vehicle";
+      // X TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
+      if (vehicle.weight <= this.towingCapacity) {
+      // X TODO: If it is, log that the vehicle is being towed
+    console.log(`Vehicle has being towed.`);
+      } else { // X TODO: If it is not, log that the vehicle is too heavy to be towed
+        console.log(`Vehicle is too heavy to be towed.`);
+      }   
     }
-     
-  }
-
+  
   override printDetails(): void {   
   // X TODO: Override the printDetails method from the Vehicle class
     // X TODO: The method should call the printDetails method of the parent class
