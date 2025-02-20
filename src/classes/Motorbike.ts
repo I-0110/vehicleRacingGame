@@ -41,7 +41,7 @@ class Motorbike extends Vehicle {
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()]
     } else {
-      this.wheels = wheels;
+      this.wheels = [];
     }
   }
   // X TODO: Implement the wheelie method
