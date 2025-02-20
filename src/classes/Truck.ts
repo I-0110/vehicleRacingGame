@@ -6,7 +6,7 @@ import Wheel from './Wheel.js';
 import AbleToTow from '../interfaces/AbleToTow.js';
 
 // X TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
-class Truck extends Vehicle {
+class Truck extends Vehicle implements AbleToTow {
   vin: string;
   color: string;
   make: string;
@@ -48,8 +48,7 @@ class Truck extends Vehicle {
       this.wheels = wheels;
     }
   }
-  // X TODO: Implement the tow method from the AbleToTow interface
-  // implement AbleToTow {
+
     tow(vehicle: Truck | Motorbike | Car): void {
       // X TODO: Get the make an model of the vehicle if it exists
       const model = vehicle.make && vehicle.model ? `${vehicle.make} ${vehicle.model}`: "vehicle";
