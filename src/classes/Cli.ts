@@ -410,7 +410,6 @@ class Cli {
             if (currentVehicle.vin === this.selectedVehicleVin) {
               if (currentVehicle instanceof Motorbike) {
                 currentVehicle.wheelie();
-                // console.log("Placeholder for wheelie method") //to see if we can get to the wheelie option
               } else {
                 console.log("Only motorbikes can perform a wheelie.");
               }
